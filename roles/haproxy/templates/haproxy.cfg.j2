@@ -40,5 +40,5 @@ backend {{ haproxy_backend_name }}
     option httpclose
     option forwardfor
     {% for backend in haproxy_backend_servers %}
-        server {{ backend.name }} {{ backend.address }} check
+        server {{ backend.name }} {{ backend.address }} check port 80
     {% endfor %}
